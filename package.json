@@ -2,9 +2,11 @@
   "name": "mern-server",
   "version": "1.0.0",
   "description": "",
+  "proxy": "http://localhost:3001/",
   "main": "server.js",
   "scripts": {
     "start": "node server.js",
+    "develop": "concurrently \"cd server && npm run watch\" \"cd client && npm start\"",
     "watch": "nodemon",
     "seed": "node seeders/seeds.js"
   },
@@ -12,14 +14,26 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "apollo-server-express": "^3.6.4",
+    "apollo-server-express": "^3.3.0",
     "bcrypt": "^4.0.1",
     "express": "^4.17.1",
     "faker": "^4.1.0",
-    "graphql": "^16.3.0",
-    "mongoose": "^5.9.9"
+    "graphql": "^15.5.0",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^6.0.13",
+    "@apollo/client": "^3.3.16",
+    "@testing-library/jest-dom": "^5.11.4",
+    "@testing-library/react": "^11.1.0",
+    "@testing-library/user-event": "^12.1.10",
+    "jwt-decode": "^3.1.2",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-router-dom": "^5.2.0",
+    "react-scripts": "4.0.3",
+    "web-vitals": "^1.0.1"
   },
   "devDependencies": {
+    "concurrently": "^5.1.0",
     "nodemon": "^2.0.3"
   }
 }
